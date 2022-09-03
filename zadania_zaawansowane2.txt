@@ -1,0 +1,53 @@
+Zadanie 9
+Szyfr Cezara - zwany szyfrem przesuwnym.
++std::string cypher(std::string text, int secretValue)
++std::string decepher(std::string text, int secretValue)
+https://pl.wikipedia.org/wiki/Szyfr_Cezara
+
+Zadanie 10
+Stwórz klasę BigInt, która będzie mogła przechowywać dowolnie dużą liczbę całkowitą.
+Do implementacji możesz użyć wewnątrz stringa lub tablicy dynamicznej std::vector<short>.
+
+Zaimplementuj:
+c-tor domyslny (daje 0)
+c-tor z 1 parametrem (long long)
+c-tor kopiujący
+toString()
+operator=
+operator+
+operator*
+operator/
+operator%
+Wszystkie operatory porównania (Przypominam, że wystarczy zaimplementować 1, a potem za jego pomocą resztę)
+
+Uwaga! Napisz testy.
+
+Zadanie 11
+a) Korzystając z implementacji BigInt i z poprzedniego zadania zaimplementuj funkcje: silnia i fibonacci.
+b) Następnie zaimplementuj te metody korzystając ze standardowego long long.
+c) Porównaj dla jakich parametrów long long już nie jest w stanie wyliczyć kolejnych wartości.
+d) (Opcjonalnie) Zmierz i porównaj czas wyliczania wartości dla parametrow od 1 do wartości znalezionej w punkcie c.
+d) (Opcjonalnie) Wylicz i zmierz czas obliczania 90!
+
+Zadanie 12
+Stwórz klasę bufora cyklicznego: CircularBuffer
+https://en.wikipedia.org/wiki/Circular_buffer
+
+Proponowane metody (jak chcesz to zawsze mozna dodac wiecej).
+c-tor - 1 argument, na ile elementów utworzyć bufor
+push_back
+pop_back
+pop_front
+operator[]
+front()
+back()
+size()
+capacity()
+resize()
+insert(pos, T);
+
+Trudniejsze zadania:
+forward iterator i reverse_iterator
+insert(iterator, T);
+
+Uwaga! Napisz testy.

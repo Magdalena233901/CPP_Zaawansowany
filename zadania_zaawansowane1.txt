@@ -1,0 +1,46 @@
+Zadanie 1
+Napisz funkcję, która odwróci podanego stringa.
+
+Zadanie 2
+Napisz funkcję, która przyjmie dwa stringi i zwróci ile liter mają wspólnych.
+
+Zadanie 3
+Napisz klasę StringConverter, która bedzie miała dwie metody (statyczne):
+std::string toCamelCase(std::string )
+std::string toSnakeCase(std::string )
+
+camelCase : snake_case
+helloSDA : hello_s_d_a
+getColour : get_colour
+isThisFirstEntry : is_this_first_entry
+
+Zadanie 4
+Napisz klasę, która umożliwi kodowanie i dekodowanie stringa na alfabet Morsea. Ignorujemy znaki specjalne
+KlasaMorseCodeTranslator
+toMorseCode
+fromMorseCode
+
+https://morsecode.world/international/translator.html
+
+Zadanie 5
+Klasa: StringCensor
+Napisz klasę która będzie cenzurować podane stringi (zamieniać wymagane litery na gwiazkę), operacje która ma wspierać ta klasa:
+- addCensoredLetter(char c)
+- std::string censor(std::string)
+
+Zadanie 6
+Stwórz listę liczb od 1 do 1000. Rozdziel te liczby na dwie osobne listy: liczby pierwsze i nie liczby pierwsze. 
+
+Zadanie  7
+Stworz listę 50 liczb całkowitych dodatnich i wypełnij ją losowymi wartościami. Wypisz ją.
+Następnie posortuj i wypisz listę tak, by na początku znalazły się wartości parzyste uporządkowane rosnąco, a za nimi wartości nieparzyste uporządkowane malejąco.
+Podpowiedz: Podziel listę na dwie osobne, odpowiednio posortuj, a następnie ja połącz w jedną.
+
+Zadanie 8
+Klasy: Rectangle(przechowuje długości boków, wylicza pole, isSquare()), RectangleGenerator(Klasa genreująca losowy prostokąt o boku z podanego przedziału), RectangleManger(tutaj faktycznie implementujemy zadania)
+Utwórz wektor 100 prostokątów o losowych długościach boków z przedziału 0, 10 (użyj liczb całkowitych)
+a) void printRectangles() - Wypisz wszystkie prostokąty (for_each + unary function)
+b) size_t countRectangleBiggerThen(int area ) - Wypisz ile jest prostokątów o polu większym niż 50 (count_if)
+c) std::vector copyRectangles() - Przekopiuj wszystkie prostkąty, które są kwadratami do drugiego vectora (copy_if) i go wypisz (for_each)
+d) void sortAreaDescending() - Posortuj vector prostokątów malejaco według pola powierzchni
+e) void deleteInvalid() Usuń wszystkie prostokąty, które mają przynajmniej jeden bok równy 0

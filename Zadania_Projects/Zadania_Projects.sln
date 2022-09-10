@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Json_przyklad", "Json_przyklad\Json_przyklad.vcxproj", "{40F6A2AE-7ED1-4959-A4C5-EB73CD0DE3D4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zadanie18", "Zadanie18\Zadanie18.vcxproj", "{37468557-15F2-490C-98DA-1388A8BD030B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{40F6A2AE-7ED1-4959-A4C5-EB73CD0DE3D4}.Release|x64.Build.0 = Release|x64
 		{40F6A2AE-7ED1-4959-A4C5-EB73CD0DE3D4}.Release|x86.ActiveCfg = Release|Win32
 		{40F6A2AE-7ED1-4959-A4C5-EB73CD0DE3D4}.Release|x86.Build.0 = Release|Win32
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Debug|x64.ActiveCfg = Debug|x64
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Debug|x64.Build.0 = Debug|x64
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Debug|x86.ActiveCfg = Debug|Win32
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Debug|x86.Build.0 = Debug|Win32
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Release|x64.ActiveCfg = Release|x64
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Release|x64.Build.0 = Release|x64
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Release|x86.ActiveCfg = Release|Win32
+		{37468557-15F2-490C-98DA-1388A8BD030B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

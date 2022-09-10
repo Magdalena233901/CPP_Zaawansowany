@@ -26,5 +26,19 @@ int main()
 
     std::cout << j["company"]["employee"];
 
+
+    json employee = j["company"]["employee"];
+
+    //w json ¿eby dobrac sie do knkretnego elementu trzeba podaæ cala sciezke do tego elementu
+
+    std::string employeeName = employee["name"];
+    int salary = employee["payroll"]["salary"];
+    int bonus = employee["payroll"]["bonus"];
+
+    int sum = salary + bonus;
+    //int sum = employee["payroll"]["salary"].get<int>() + employee["payroll"]["bonus"].get<int>();
+    //tutaj mozemy wykonaæ to dzialanie na sztywno podajac typ jaki chcemy dostac
+
+    std::cout << "Zarobki pracownika " << employeeName << " to: " << sum << std::endl;
 }
 

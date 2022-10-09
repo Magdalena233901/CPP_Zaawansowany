@@ -3,14 +3,6 @@
 #include "Waluty.hpp"
 #include "json/json.hpp"
 
-/*
-    "Students":[
-    {"firstName":"Sean", "lastName":"Brown"},
-    {"firstName":"Drake", "lastName":"Williams"},
-    {"firstName":"Tom", "lastName":"Miller"},
-    {"firstName":"Peter", "lastName": "Jonson"}
-    ]
-*/
 
 int main()
 {

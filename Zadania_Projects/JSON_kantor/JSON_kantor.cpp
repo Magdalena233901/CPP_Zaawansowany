@@ -5,8 +5,8 @@
 
 namespace Zad {
 
-    Currency::Currency(std::string newFirstName, std::string newLastName, float newStudentId, float newSellPrice)
-        : currencyName(newFirstName), codeName(newLastName), buyPrice(newStudentId), sellPrice(newSellPrice)
+    Currency::Currency(std::string newCurrencyName, std::string newCodeName, float newBuyPrice, float newSellPrice)
+        : currencyName(newCurrencyName), codeName(newCodeName), buyPrice(newBuyPrice), sellPrice(newSellPrice)
     {};
 
     void to_json(json& j, const Currency& s)

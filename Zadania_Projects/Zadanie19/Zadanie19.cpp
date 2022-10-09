@@ -32,4 +32,22 @@ int main()
     //std::cout << std::setw(4) << j;
     std::ofstream o("students.json");
     o << std::setw(4) << j << std::endl;
+
+    //WCZYTANIE Z PLIKU
+
+    std::ifstream ifs("students.json");
+    json jf = json::parse(ifs);
+
+    std::list<Zad::Student>studentsList;
+
+    for (auto& elem : jf["Students"])
+    {
+        std::cout << "Wczytuje " << elem["firstName"];
+
+        studentsList.push_back(elem.get<Zad::Student>());
+    }
+
+    std::for_each(studentsList.begin(), studentsList.end(), [](const Zad::Student& s) {
+        std::cout << "Imie: " << s.getFirstName() << "; Nazwisko: " << s.getLastName() << std::endl; });
+
 }

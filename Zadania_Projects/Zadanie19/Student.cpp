@@ -8,7 +8,17 @@ namespace Zad {
 
     void to_json(json& j, const Student& s)
     {
-        j = json{ {"firstName", s.firstName} , {"lastName" , s.lastName}, {"studentId" , s.studentId} };
+        j = json{ {"firstName", s.getFirstName()} , {"lastName" , s.getLastName()}, {"studentId" , s.getStudentId()}};
+    }
+
+    void from_json( const json& j, Student& s)
+    {
+        s.setFirstName(j["firstName"].get<std::string>());
+        s.setLastName(j["lastName"]);
+
+        int studentId;
+        j["studentId"].get_to(studentId); //get_to sluzy do porowniania zmiennej
+        s.setStudentId(studentId);
     }
 
 }

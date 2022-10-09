@@ -1,2 +1,5 @@
 ﻿  Json_przyklad.cpp
   Json_przyklad.vcxproj -> C:\ME\SDA&Ericsson\projekty\CPP_Programowanie\CPP_Zaawansowane_Zadania\CPP_Zaawansowany\Zadania_Projects\x64\Debug\Json_przyklad.exe
+C:\ME\SDA&Ericsson\projekty\CPP_Programowanie\CPP_Zaawansowane_Zadania\CPP_Zaawansowany\Zadania_Projects\Json_przyklad\json\json.hpp(18845): warning C28020: The expression '0<=_Param_(1)&&_Param_(1)<=400-1' is not true at this call.
+C:\ME\SDA&Ericsson\projekty\CPP_Programowanie\CPP_Zaawansowane_Zadania\CPP_Zaawansowany\Zadania_Projects\Json_przyklad\json\json.hpp(4285): warning C26800: Use of a moved from object: ''(*<args_2>)'' (lifetime.1).
+C:\ME\SDA&Ericsson\projekty\CPP_Programowanie\CPP_Zaawansowane_Zadania\CPP_Zaawansowany\Zadania_Projects\Json_przyklad\json\json.hpp(20348): warning C26495: Variable 'nlohmann::json_abi_v3_11_2::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_11_2::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>::m_type' is uninitialized. Always initialize a member variable (type.6).

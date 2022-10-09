@@ -1,0 +1,68 @@
+#pragma once
+#pragma once
+#include <string>
+#include "json/json.hpp"
+
+namespace Zad
+{
+    using json = nlohmann::json;
+
+    class Currency
+    {
+    public:
+        Currency(std::string newFirstName, std::string newLastName, float newStudentId, float newSellPrice);
+
+        Currency()
+        {};
+
+        std::string getCurrencyName() const
+        {
+            return currencyName;
+        }
+
+        std::string getCodeName() const
+        {
+            return codeName;
+        }
+
+        float getBuyPrice() const
+        {
+            return buyPrice;
+        }
+
+        float getSellPrice() const
+        {
+            return sellPrice;
+        }
+
+        void setCurrencyName(std::string newFirstName)
+        {
+            currencyName = newFirstName;
+        }
+
+        void setCodeName(std::string newLastName)
+        {
+            codeName = newLastName;
+        }
+
+        void setBuyPrice(float newStudentId)
+        {
+            buyPrice = newStudentId;
+        }
+
+        void setSellPrice(float newSellPrice)
+        {
+            sellPrice = newSellPrice;
+        }
+
+    private:
+        std::string currencyName;
+        std::string codeName;
+        float buyPrice;
+        float sellPrice;
+    };
+
+    void to_json(json& j, const Currency& s);
+    void from_json(const json& j, Currency& s);
+
+}

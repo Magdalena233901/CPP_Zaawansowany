@@ -10,14 +10,14 @@ namespace Zad
     class Currency
     {
     public:
-        Currency(std::string newCurrencyName, std::string newCodeName, float newBuyPrice, float newSellPrice);
+        Currency(std::string newCurrencyTarget, std::string newCodeName, float newBuyPrice, float newSellPrice);
 
         Currency()
         {};
 
-        std::string getCurrencyName() const
+        std::string getCurrencyTarget() const
         {
-            return currencyName;
+            return currencyTarget;
         }
 
         std::string getCodeName() const
@@ -35,9 +35,9 @@ namespace Zad
             return sellPrice;
         }
 
-        void setCurrencyName(std::string newCurrencyName)
+        void setCurrencyTarget(std::string newCurrencyTarget)
         {
-            currencyName = newCurrencyName;
+            currencyTarget = newCurrencyTarget;
         }
 
         void setCodeName(std::string newCodeName)
@@ -57,7 +57,7 @@ namespace Zad
 
 
     private:
-        std::string currencyName;
+        std::string currencyTarget;
         std::string codeName;
         float buyPrice;
         float sellPrice;

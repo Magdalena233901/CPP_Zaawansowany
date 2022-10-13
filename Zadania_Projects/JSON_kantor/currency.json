@@ -3,25 +3,25 @@
         {
             "buyPrice": 4.8454999923706055,
             "codeName": "EUR",
-            "currencyName": "Euro",
+            "currencyTarget": "Euro",
             "sellPrice": 4.875500202178955
         },
         {
             "buyPrice": 4.976200103759766,
             "codeName": "USD",
-            "currencyName": "Dollar",
+            "currencyTarget": "Dollar",
             "sellPrice": 5.006199836730957
         },
         {
             "buyPrice": 5.048500061035156,
             "codeName": "CHF",
-            "currencyName": "Frank szwajcarski",
+            "currencyTarget": "Frank szwajcarski",
             "sellPrice": 5.048500061035156
         },
         {
             "buyPrice": 5.514200210571289,
             "codeName": "GBP",
-            "currencyName": "Funt brytyjski",
+            "currencyTarget": "Funt brytyjski",
             "sellPrice": 5.554200172424316
         }
     ]

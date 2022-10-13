@@ -5,18 +5,18 @@
 
 namespace Zad {
 
-    Currency::Currency(std::string newCurrencyName, std::string newCodeName, float newBuyPrice, float newSellPrice)
-        : currencyName(newCurrencyName), codeName(newCodeName), buyPrice(newBuyPrice), sellPrice(newSellPrice)
+    Currency::Currency(std::string newCurrencyTarget, std::string newCodeName, float newBuyPrice, float newSellPrice)
+        : currencyTarget(newCurrencyTarget), codeName(newCodeName), buyPrice(newBuyPrice), sellPrice(newSellPrice)
     {};
 
     void to_json(json& j, const Currency& s)
     {
-        j = json{ {"currencyName", s.getCurrencyName()} , {"codeName" , s.getCodeName()}, {"buyPrice" , s.getBuyPrice()}, {"sellPrice" , s.getSellPrice()} };
+        j = json{ {"currencyTarget", s.getCurrencyTarget()} , {"codeName" , s.getCodeName()}, {"buyPrice" , s.getBuyPrice()}, {"sellPrice" , s.getSellPrice()} };
     }
 
     void from_json(const json& j, Currency& s)
     {
-        s.setCurrencyName(j["currencyName"].get<std::string>());
+        s.setCurrencyTarget(j["currencyTarget"].get<std::string>());
         s.setCodeName(j["codeName"]);
 
         float buyPrice;

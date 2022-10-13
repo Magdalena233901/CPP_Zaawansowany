@@ -33,7 +33,7 @@ int main()
 
     for (auto& elem : jf["Currency"])
     {
-        //std::cout << "Wczytuje " << elem["currencyName"];
+        //std::cout << "Wczytuje " << elem["currencyTarget"];
 
         currencyList.push_back(elem.get<Zad::Currency>());
     }
@@ -41,7 +41,7 @@ int main()
 
 
     std::for_each(currencyList.begin(), currencyList.end(), [](const Zad::Currency& s) {
-        std::cout << "Currency Name: " << s.getCurrencyName() << "; Code: " << s.getCodeName() << "; Buy Price: " << s.getBuyPrice() << "; Sell Price: " << s.getSellPrice() << std::endl; });
+        std::cout << "Currency: " << s.getCurrencyTarget() << "; Code: " << s.getCodeName() << "; Buy Price: " << s.getBuyPrice() << "; Sell Price: " << s.getSellPrice() << std::endl; });
 
 
     Table table;

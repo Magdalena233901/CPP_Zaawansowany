@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kolorowanka", "Kolorowanka\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{93BA710A-03A1-4A3E-A440-B53156937FD1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSON_kantor", "JSON_kantor\JSON_kantor.vcxproj", "{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{93BA710A-03A1-4A3E-A440-B53156937FD1}.Release|x64.Build.0 = Release|x64
 		{93BA710A-03A1-4A3E-A440-B53156937FD1}.Release|x86.ActiveCfg = Release|Win32
 		{93BA710A-03A1-4A3E-A440-B53156937FD1}.Release|x86.Build.0 = Release|Win32
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Debug|x64.ActiveCfg = Debug|x64
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Debug|x64.Build.0 = Debug|x64
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Debug|x86.ActiveCfg = Debug|Win32
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Debug|x86.Build.0 = Debug|Win32
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Release|x64.ActiveCfg = Release|x64
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Release|x64.Build.0 = Release|x64
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Release|x86.ActiveCfg = Release|Win32
+		{9A9F8E5F-D590-42EE-958C-0B0F54CBBF4F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

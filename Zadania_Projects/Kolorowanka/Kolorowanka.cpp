@@ -17,6 +17,7 @@
 #include <ostream>
 namespace Color {
 	enum class Code {
+	
 		FG_DEFAULT = 39,
 		FG_BLACK = 30,
 		FG_RED = 31,
@@ -61,4 +62,8 @@ namespace Color {
 //	std::cout << Color::Code::FG_BLUE << Color::Code::BG_RED << "blue text on green background"
 //		<< Color::Code::FG_DEFAULT << Color::Code::BG_DEFAULT << std::endl;
 //	std::cout << "Bez kolorkow2" << std::endl;
+//
+//	const std::string test("\033[1;97;42m");
+//	std::cout << test << "green text on white background" << reset << std::endl;
+//	std::cout << "Bez kolorkow" << std::endl;
 //}

@@ -55,6 +55,7 @@ namespace Zad
             sellPrice = newSellPrice;
         }
 
+
     private:
         std::string currencyName;
         std::string codeName;

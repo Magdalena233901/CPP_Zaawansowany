@@ -26,6 +26,7 @@ namespace Zad {
         float sellPrice;
         j["sellPrice"].get_to(sellPrice);
         s.setSellPrice(sellPrice);
+
     }
 
 }

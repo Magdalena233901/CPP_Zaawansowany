@@ -19,10 +19,22 @@
             "sellPrice": 5.048500061035156
         },
         {
-            "buyPrice": 5.514200210571289,
-            "codeName": "GBP",
-            "currencyTarget": "Funt brytyjski",
-            "sellPrice": 5.554200172424316
+            "buyPrice": 4.5,
+            "codeName": "PLN",
+            "currencyTarget": "Polski zloty",
+            "sellPrice": 4.300000190734863
+        },
+        {
+            "buyPrice": 3.301300048828125,
+            "codeName": "JPY",
+            "currencyTarget": "Jen japonski",
+            "sellPrice": 3.3433001041412354
+        },
+        {
+            "buyPrice": 0.45899999141693115,
+            "codeName": "NOK",
+            "currencyTarget": "Korona norweska",
+            "sellPrice": 0.4659999907016754
         }
     ]
 }

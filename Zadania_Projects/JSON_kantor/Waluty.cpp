@@ -15,7 +15,9 @@ int main()
     currency.emplace_back("Euro", "EUR", 4.8455, 4.8755);
     currency.push_back(Zad::Currency("Dollar", "USD", 4.9762, 5.0062));
     currency.emplace_back("Frank szwajcarski", "CHF", 5.0485, 5.0485);
-    currency.emplace_back("Funt brytyjski", "GBP", 5.5142, 5.5542);
+    currency.emplace_back("Polski zloty", "PLN", 4.5, 4.3);
+	currency.emplace_back("Jen japonski", "JPY", 3.3013, 3.3433);
+	currency.emplace_back("Korona norweska", "NOK", 0.459, 0.4660);
     
     json j;
 
@@ -44,22 +46,19 @@ int main()
 	table.add_row(Row_t{ "Currency", "Code", "Buy Price", "Sell Price" });
 	std::for_each(currencyList.begin(), currencyList.end(), [&table](const Zad::Currency& s)
 		{
-			table.add_row({ s.getCurrencyTarget(), s.getCodeName() , "4.8455", "5.0062" });
+			table.add_row({ s.getCurrencyTarget(), s.getCodeName(), "4.82", "5.0062"});
 			//table.add_row(Row_t{ "Euro", "EUR", "4.8455", "4.8755" });
 
 
 			// Set width of cells in each column
-			table.column(0).format().width(10);
+			//table.column(0).format().width(15); //there is no size, so it's auto
 			table.column(1).format().width(10);
 			table.column(2).format().width(12);
 			table.column(3).format().width(12);
 
-			//Set border sign in the special corner
-			table[1][1].format()
-				.multi_byte_characters(true).corner_top_left("*").corner_color(Color::yellow);
-			table.column(1).format()
-				.multi_byte_characters(true);
-
+			////Set border sign in the special corner
+			//table[1][1].format()
+			//	.multi_byte_characters(true).corner_top_left("*").corner_color(Color::yellow);
 
 
 			//Format header cells
@@ -92,10 +91,10 @@ int main()
 						.font_background_color(Color::white).font_color(Color::blue);
 				}
 			}
-			std::cout << table << std::endl;
+			
 
 			//std::cout << "Currency: " << s.getCurrencyTarget() << "; Code: " << s.getCodeName() << "; Buy Price: " << s.getBuyPrice() << "; Sell Price: " << s.getSellPrice() << std::endl;
 		});
 
-
+	std::cout << table << std::endl;
 }

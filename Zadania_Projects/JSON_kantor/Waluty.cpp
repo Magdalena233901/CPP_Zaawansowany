@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "Waluty.hpp"
 #include "json/json.hpp"
 #include "tabulate.hpp"
@@ -9,6 +10,9 @@ using Row_t = Table::Row_t;
 
 int main()
 {
+	//get GET https ://v6.exchangerate-api.com/v6/87da24ca90c619102e78ebb3latest/PLN
+
+
     using json = nlohmann::json;
 
     std::vector<Zad::Currency> currency;
@@ -17,7 +21,7 @@ int main()
     currency.emplace_back("Frank szwajcarski", "CHF", 5.0485, 5.0485);
     currency.emplace_back("Polski zloty", "PLN", 4.5, 4.3);
 	currency.emplace_back("Jen japonski", "JPY", 3.3013, 3.3433);
-	currency.emplace_back("Korona norweska", "NOK", 0.459, 0.4660);
+	currency.emplace_back("Korona norweska", "NOK", 0.459, 5.5542);
     
     json j;
 
@@ -28,8 +32,7 @@ int main()
     o << std::setw(4) << j << std::endl;
 
     //WCZYTANIE Z PLIKU
-
-    std::ifstream ifs("currency.json");
+	std::ifstream ifs("currency.json");
     json jf = json::parse(ifs);
 
     std::list<Zad::Currency>currencyList;
@@ -46,8 +49,14 @@ int main()
 	table.add_row(Row_t{ "Currency", "Code", "Buy Price", "Sell Price" });
 	std::for_each(currencyList.begin(), currencyList.end(), [&table](const Zad::Currency& s)
 		{
-			table.add_row({ s.getCurrencyTarget(), s.getCodeName(), "4.82", "5.0062"});
+			
+			table.add_row(Row_t{ s.getCurrencyTarget(), s.getCodeName(), std::to_string(s.getBuyPrice()), std::to_string(s.getSellPrice()) });
 			//table.add_row(Row_t{ "Euro", "EUR", "4.8455", "4.8755" });
+
+
+			//Row_t row;
+			//row.emplace_back(s.getBuyPrice());
+			////to_string			
 
 
 			// Set width of cells in each column

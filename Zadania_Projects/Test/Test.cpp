@@ -12,7 +12,7 @@
 
 
 using namespace tabulate;
-using Row_t = Table::Row_t;
+using Row_t = Table::Row_t ;
 
 namespace
 {
@@ -88,24 +88,25 @@ int main()
             //wyswietla wszyttkie curriencies - all rates
             //std::cout << object.at("rates") << std::endl;
 
+            Table table;
+            table.add_row(Row_t{ "Currency", "Code", "Buy Price", "Sell Price" });
+
             for (auto& rate : object.at("rates"))
             {
                 //std::cout << rate << std::endl << "***************" << std::endl;
             //wyswietla w osobnym wierszu kazdy rate
                 //std::cout << rate << std::endl;
 
-                for (const auto& item : object.at("rates"))
-                {
-                    std::cout << object.at("rates") << "\n";
-                    for (const auto& val : item.items())
-                    {
-                        std::cout << val.key() << ": " << val.value() << "\n";
-                    }
-                }
-
+                std::cout << rate["code"] << "\n";
+                //std::cout << rate["currency"] << "\n";
+                //std::cout << rate["ask"] << "\n";
+                //std::cout << rate["bid"] << "\n";
+                //table.add_row(Row_t{ (rate["currency"]), rate["code"], rate["bid"], rate["ask"] }); -> to jest zla linijka
+              
             }
 
         }
+        
 	}
 	else
 	{

@@ -70,9 +70,9 @@ int main()
 
 	if (httpCode == 200)
 	{
-		std::cout << "\nGot successful response from " << url << std::endl;
-        std::cout << "HTTP data was:\n" << *httpData.get() << std::endl;
-
+		std::cout << "\nSuccessful response from NBP " << url << std::endl;
+        //std::cout << "HTTP data was:\n" << *httpData.get() << std::endl;
+       
 
         //std::cout << std::setw(4) << j;
         std::ofstream o("test.json");
@@ -81,6 +81,14 @@ int main()
 
 
         std::ifstream ifs("test.json");
+
+        for (auto& el : jf.items())
+        {
+            nlohmann::json object = el.value();
+            std::cout <<"\nGetting trading date: " << object.at("tradingDate") << std::endl;
+            std::cout <<"Getting publication date: " << object.at("effectiveDate") << std::endl;
+            std::cout <<"  "<< std::endl;
+        }
 
         for (auto& el : jf.items())
         {

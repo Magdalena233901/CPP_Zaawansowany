@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="curl\curl.h" />
     <ClInclude Include="json\json.hpp" />
+    <ClInclude Include="tabulate\tabulate.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

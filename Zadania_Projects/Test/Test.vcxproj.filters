@@ -26,5 +26,8 @@
     <ClInclude Include="json\json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tabulate\tabulate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

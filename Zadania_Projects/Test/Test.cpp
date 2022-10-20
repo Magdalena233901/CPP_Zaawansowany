@@ -4,9 +4,15 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <fstream>
 
 #include "curl/curl.h"
 #include "json/json.hpp"
+#include "tabulate/tabulate.hpp"
+
+
+using namespace tabulate;
+using Row_t = Table::Row_t;
 
 namespace
 {
@@ -24,8 +30,8 @@ namespace
 
 int main()
 {
-    const std::string url("http://date.jsontest.com/");
-    //const std::string url("http://api.nbp.pl/api/exchangerates/tables/c/?format=json");
+    //const std::string url("http://date.jsontest.com/");
+    const std::string url("http://api.nbp.pl/api/exchangerates/tables/c/?format=json");
 
 
     CURL* curl = curl_easy_init();
@@ -59,10 +65,47 @@ int main()
     curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpCode);
     curl_easy_cleanup(curl);
 
+    using json = nlohmann::json;
+
+
 	if (httpCode == 200)
 	{
 		std::cout << "\nGot successful response from " << url << std::endl;
         std::cout << "HTTP data was:\n" << *httpData.get() << std::endl;
+
+
+        //std::cout << std::setw(4) << j;
+        std::ofstream o("test.json");
+        o << std::setw(4) << *httpData.get() << std::endl;
+        json jf = json::parse(*httpData.get());
+
+
+        std::ifstream ifs("test.json");
+
+        for (auto& el : jf.items())
+        {
+            nlohmann::json object = el.value();
+            //wyswietla wszyttkie curriencies - all rates
+            //std::cout << object.at("rates") << std::endl;
+
+            for (auto& rate : object.at("rates"))
+            {
+                //std::cout << rate << std::endl << "***************" << std::endl;
+            //wyswietla w osobnym wierszu kazdy rate
+                //std::cout << rate << std::endl;
+
+                for (const auto& item : object.at("rates"))
+                {
+                    std::cout << object.at("rates") << "\n";
+                    for (const auto& val : item.items())
+                    {
+                        std::cout << val.key() << ": " << val.value() << "\n";
+                    }
+                }
+
+            }
+
+        }
 	}
 	else
 	{

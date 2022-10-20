@@ -51,13 +51,11 @@ int main()
 		{
 			
 			table.add_row(Row_t{ s.getCurrencyTarget(), s.getCodeName(), std::to_string(s.getBuyPrice()), std::to_string(s.getSellPrice()) });
-			//table.add_row(Row_t{ "Euro", "EUR", "4.8455", "4.8755" });
-
+			
 
 			//Row_t row;
 			//row.emplace_back(s.getBuyPrice());
-			////to_string			
-
+			
 
 			// Set width of cells in each column
 			//table.column(0).format().width(15); //there is no size, so it's auto
@@ -69,6 +67,8 @@ int main()
 			//table[1][1].format()
 			//	.multi_byte_characters(true).corner_top_left("*").corner_color(Color::yellow);
 
+			table.format().hide_border_top();
+			
 
 			//Format header cells
 			for (size_t i = 0; i < 4; ++i) {
@@ -84,6 +84,7 @@ int main()
 			for (size_t i = 0; i < 4; ++i) {
 				table[0][3].format().font_color(Color::white).font_background_color(Color::green);
 			}
+
 
 			// Iterator over cells in the third column
 			for (auto& cell : table.column(2)) {

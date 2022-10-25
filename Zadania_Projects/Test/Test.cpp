@@ -120,7 +120,7 @@ int main()
 				table.column(2).format().width(12);
 				table.column(3).format().width(12);
 
-				table.format().hide_border_top();
+				//table.format().hide_border_top();
 				table.format().corner_top_left("-").corner_bottom_left("-").corner_top_right("-").corner_bottom_right("-");
 				table.format().corner_top_right("-");
 
@@ -139,6 +139,22 @@ int main()
 				for (size_t i = 0; i < 4; ++i) {
 					table[0][3].format().font_color(Color::white).font_background_color(Color::green);
 				}
+
+				// Iterator over cells in the third column
+			for (auto& cell : table.column(2)) {
+				if (cell.get_text() != "Buy Price") {
+					cell.format()
+						.font_background_color(Color::white).font_color(Color::blue);
+				}
+			}
+
+			// Iterator over cells in the fourth column
+			for (auto& cell : table.column(3)) {
+				if (cell.get_text() != "Sell Price") {
+					cell.format()
+						.font_background_color(Color::white).font_color(Color::blue);
+				}
+			}
 
 
 			});

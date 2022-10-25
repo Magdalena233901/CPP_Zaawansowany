@@ -1,4 +1,3 @@
-
 #pragma once
 #include <string>
 
@@ -7,65 +6,65 @@
 
 namespace Zad
 {
-    using json = nlohmann::json;
+	using json = nlohmann::json;
 
-    class Currency
-    {
-    public:
-        Currency(std::string newCurrencyTarget, std::string newCodeName, float newBuyPrice, float newSellPrice);
+	class Currency
+	{
+	public:
+		Currency(std::string newCurrencyTarget, std::string newCodeName, float newBuyPrice, float newSellPrice);
 
-        Currency()
-        {};
+		Currency()
+		{};
 
-        std::string getCurrencyTarget() const
-        {
-            return currencyTarget;
-        }
+		std::string getCurrencyTarget() const
+		{
+			return currencyTarget;
+		}
 
-        std::string getCodeName() const
-        {
-            return codeName;
-        }
+		std::string getCodeName() const
+		{
+			return codeName;
+		}
 
-        float getBuyPrice() const
-        {
-            return buyPrice;
-        }
+		float getBuyPrice() const
+		{
+			return buyPrice;
+		}
 
-        float getSellPrice() const
-        {
-            return sellPrice;
-        }
+		float getSellPrice() const
+		{
+			return sellPrice;
+		}
 
-        void setCurrencyTarget(std::string newCurrencyTarget)
-        {
-            currencyTarget = newCurrencyTarget;
-        }
+		void setCurrencyTarget(std::string newCurrencyTarget)
+		{
+			currencyTarget = newCurrencyTarget;
+		}
 
-        void setCodeName(std::string newCodeName)
-        {
-            codeName = newCodeName;
-        }
+		void setCodeName(std::string newCodeName)
+		{
+			codeName = newCodeName;
+		}
 
-        void setBuyPrice(float newBuyPrice)
-        {
-            buyPrice = newBuyPrice;
-        }
+		void setBuyPrice(float newBuyPrice)
+		{
+			buyPrice = newBuyPrice;
+		}
 
-        void setSellPrice(float newSellPrice)
-        {
-            sellPrice = newSellPrice;
-        }
+		void setSellPrice(float newSellPrice)
+		{
+			sellPrice = newSellPrice;
+		}
 
 
-    private:
-        std::string currencyTarget;
-        std::string codeName;
-        float buyPrice;
-        float sellPrice;
-    };
+	private:
+		std::string currencyTarget;
+		std::string codeName;
+		float buyPrice;
+		float sellPrice;
+	};
 
-    void to_json(json& j, const Currency& s);
-    void from_json(const json& j, Currency& s);
+	void to_json(json& j, const Currency& s);
+	void from_json(const json& j, Currency& s);
 
 }

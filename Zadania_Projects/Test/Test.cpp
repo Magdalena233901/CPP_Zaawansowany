@@ -10,6 +10,8 @@
 #include "json/json.hpp"
 #include "tabulate/tabulate.hpp"
 
+#include "currency.hpp"
+
 
 using namespace tabulate;
 using Row_t = Table::Row_t ;
@@ -80,7 +82,11 @@ int main()
         json jf = json::parse(*httpData.get());
 
 
+
         std::ifstream ifs("test.json");
+        Table table;
+        std::vector<Zad::Currency> currency;
+
 
         for (auto& el : jf.items())
         {
@@ -91,30 +97,62 @@ int main()
         }
 
         for (auto& el : jf.items())
-        {
-            nlohmann::json object = el.value();
-            //wyswietla wszyttkie curriencies - all rates
-            //std::cout << object.at("rates") << std::endl;
+		{
+			nlohmann::json object = el.value();
+			//wyswietla wszyttkie curriencies - all rates
+			//std::cout << object.at("rates") << std::endl;
 
-            Table table;
-            table.add_row(Row_t{ "Currency", "Code", "Buy Price", "Sell Price" });
+			
+			table.add_row(Row_t{ "Currency", "Code", "Buy Price", "Sell Price" });
 
-            for (auto& rate : object.at("rates"))
+
+			for (auto& rate : object.at("rates"))
+			{
+				//std::cout << rate << std::endl << "***************" << std::endl;
+			//wyswietla w osobnym wierszu kazdy rate
+				//std::cout << rate << std::endl;
+
+				//std::cout << rate["code"] << "\n";
+				//std::cout << rate["currency"] << "\n";
+				//std::cout << rate["ask"] << "\n";
+				//std::cout << rate["bid"] << "\n";
+				//table.add_row(Row_t{ (rate["currency"]), rate["code"], rate["bid"], rate["ask"] }); //-> to jest zla linijka
+
+
+				
+				currency.emplace_back(rate["currency"], rate["code"], rate["ask"], rate["bid"]);
+				//currency.push_back(Zad::Currency("Dollar", "USD", 4.9762, 5.0062));
+				//currency.emplace_back("Frank szwajcarski", "CHF", 5.0485, 5.0485);
+				//currency.emplace_back("Polski zloty", "PLN", 4.5, 4.3);
+				//currency.emplace_back("Jen japonski", "JPY", 3.3013, 3.3433);
+				//currency.emplace_back("Korona norweska", "NOK", 0.459, 5.5542);
+
+				//std::list<Zad::Currency>currencyList;
+
+				//for (auto& elem : jf["Currency"])
+				//{
+				//	//std::cout << "Wczytuje " << elem["currencyTarget"];
+
+				//	currencyList.push_back(elem.get<Zad::Currency>());
+				//}
+
+
+				
+
+				//table.add_row(Row_t{ "Currency", "Code", "Buy Price", "Sell Price" });
+               
+
+			}
+
+		}
+        std::for_each(currency.begin(), currency.end(), [&table](const Zad::Currency& s)
             {
-                //std::cout << rate << std::endl << "***************" << std::endl;
-            //wyswietla w osobnym wierszu kazdy rate
-                //std::cout << rate << std::endl;
 
-                std::cout << rate["code"] << "\n";
-                //std::cout << rate["currency"] << "\n";
-                //std::cout << rate["ask"] << "\n";
-                //std::cout << rate["bid"] << "\n";
-                //table.add_row(Row_t{ (rate["currency"]), rate["code"], rate["bid"], rate["ask"] }); -> to jest zla linijka
-              
-            }
+                table.add_row(Row_t{ s.getCurrencyTarget(), s.getCodeName(), std::to_string(s.getBuyPrice()), std::to_string(s.getSellPrice()) });
 
-        }
-        
+
+            });
+        std::cout << table << std::endl;
 	}
 	else
 	{

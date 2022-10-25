@@ -77,13 +77,13 @@ int main()
 
 
 		//std::cout << std::setw(4) << j;
-		std::ofstream o("test.json");
+		std::ofstream o("currency.json");
 		o << std::setw(4) << *httpData.get() << std::endl;
 		json jf = json::parse(*httpData.get());
 
 
 
-		std::ifstream ifs("test.json");
+		std::ifstream ifs("currency.json");
 		Table table;
 		std::vector<Zad::Currency> currency;
 
